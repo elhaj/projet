@@ -1,0 +1,14 @@
+!SESSION 2014-05-02 18:26:49.461 -----------------------------------------------
+eclipse.buildId=M20120914-1800
+java.version=1.7.0_45
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=fr_FR
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -data C:\Users\SIDI\Desktop\PFE\Application -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.core.resources 4 77 2014-05-02 18:33:16.849
+!MESSAGE Invalid project description.
+!SUBENTRY 1 unknown 0 0 2014-05-02 18:33:16.849
+!MESSAGE OK
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2014-05-02 18:33:16.849
+!MESSAGE C:\Users\SIDI\Desktop\PFE\Application overlaps the workspace location: C:\Users\SIDI\Desktop\PFE\Application
