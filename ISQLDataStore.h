@@ -10,21 +10,19 @@
 #include "SQLSession.h"
 #include "ISQLEntityCollection.h"
 #include "ISQLEntity.h"
+#include <string>
 #include <vector>
+#include "ISQLDataClass.h"
 class ISQLDataStore
 {
 public :
-	 ISQLDataStore(std::string DSN);
+	 ISQLDataStore();
 	 virtual ~ISQLDataStore();
-	 ISQLEntity* find(std::string tableName, std::vector<std::string> fields, std::string condition, std::string);
-	 ISQLEntityCollection* query(std::string tableName, std::vector<std::string> fields, std::string condition, std::string database);
-	 virtual std::vector<std::string> getPrimaryKeys()=0;
-	 //virtual std::vector<std::string> getRowHash()=0;
-private :
-	 SQLSession session;
-	 std::vector<std::string> getPrimaryKeyFields(std::string tableName, std::string database);
+	 ISQLDataClass* getDataClass(int i);
+	 ISQLDataClass* getDataClass(std::string name);
+	 int getDataClassesCount();
+protected:
+	 std::vector<ISQLDataClass*> fDataClasses;
+
 };
-
-
-
 #endif /* DATASTORE_H_ */

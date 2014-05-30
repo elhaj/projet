@@ -8,14 +8,35 @@
 #ifndef HASHVERSION_H_
 #define HASHVERSION_H_
 #include "IVersion.h"
+#include "ISQLEntity.h"
+#include <iostream>
+
 #include <string>
-class HashVersion: IVersion {
+class HashVersion:public IVersion {
 public:
-	IVersion* getVersion() const;
+	HashVersion(std::string fVersionType,std::string fhash):IVersion(fVersionType)
+	{
+		this->fhash=fhash;
+	}
+	~HashVersion()
+	{
+	}
+	 void displayVersion() const {
+		 std::cout<<fhash<<std::endl;
+	 }
 private:
-	std::string hash;
+	bool doCompare(const IVersion& rhs); //   compare deux hashs versions
+	std::string fhash; // hash stocké sous forme d'un string
 };
-/*bool operator ==(const HashVersion& lhs, const HashVersion& rhs) {
-	return lhs.hash == rhs.hash;
-}*/
+
+bool HashVersion::doCompare(const IVersion& rhs)
+	{
+		 bool bRetval = false;
+		         const HashVersion* rhV = static_cast<const HashVersion*>(&rhs);
+		         if (rhV)
+		         {
+		            bRetval = fhash == rhV->fhash;
+		         }
+		         return bRetval;
+	}
 #endif /* HASHVERSION_H_ */

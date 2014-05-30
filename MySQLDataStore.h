@@ -9,17 +9,10 @@
 #define MYSQLDATASTORE_H_
 #include "ISQLDataStore.h"
 
-class MySQLDataStore : ISQLDataStore
+class MySQLDataStore : public ISQLDataStore
 {
 public :
-	 MySQLDataStore(std::string DSN);
-	 virtual ~MySQLDataStore();
-	 ISQLEntity* find(std::string tableName, std::string fields[], std::string condition);
-	 ISQLEntityCollection* query(std::string tableName, std::string fields[], std::string condition);
-	 std::vector<std::string> getPrimaryKeys();
-	 //virtual std::vector<std::string> getRowHash()=0;
-private :
-	 SQLSession session;
-	 std::vector<std::string> getPrimaryKeyFields(std::string tableName, std::string database);
+	 MySQLDataStore();
+	 ~MySQLDataStore();
 };
 #endif /* MYSQLDATASTORE_H_ */

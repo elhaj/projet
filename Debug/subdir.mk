@@ -5,7 +5,13 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
 ../EntityManager.cpp \
+../ISQLAttribute.cpp \
+../ISQLDataClass.cpp \
 ../ISQLDataStore.cpp \
+../ISQLEntity.cpp \
+../ISQLResultSet.cpp \
+../ISQLRow.cpp \
+../MySQLDataStore.cpp \
 ../MySQLEntity.cpp \
 ../MySQLEntityCollection.cpp \
 ../SQLSession.cpp \
@@ -13,7 +19,13 @@ CPP_SRCS += \
 
 OBJS += \
 ./EntityManager.o \
+./ISQLAttribute.o \
+./ISQLDataClass.o \
 ./ISQLDataStore.o \
+./ISQLEntity.o \
+./ISQLResultSet.o \
+./ISQLRow.o \
+./MySQLDataStore.o \
 ./MySQLEntity.o \
 ./MySQLEntityCollection.o \
 ./SQLSession.o \
@@ -21,7 +33,13 @@ OBJS += \
 
 CPP_DEPS += \
 ./EntityManager.d \
+./ISQLAttribute.d \
+./ISQLDataClass.d \
 ./ISQLDataStore.d \
+./ISQLEntity.d \
+./ISQLResultSet.d \
+./ISQLRow.d \
+./MySQLDataStore.d \
 ./MySQLEntity.d \
 ./MySQLEntityCollection.d \
 ./SQLSession.d \

@@ -1,0 +1,5 @@
+sgbd=mysql
+dsn=DSN
+database=pfe
+user=user
+password=elhaj

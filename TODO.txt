@@ -1,0 +1,32 @@
+datastore : dsn from file
+--> retrieve all dataclasses
+ISQLDataStore(list of dataclasses)
+
+ISQLDataStore::GetDataClassesCount
+
+ISQLDataStore::GetDataClass(i) : ISQLDataClass*
+
+ISQLDataClass::createEntity
+
+ISQLDataClass::find(filter) : ISQLEntity
+
+ISQLEntityManager::update(Entity*)
+ISQLEntityManager::getVersion(Entity*)
+
+
+sqldatasources
+-------------------
+	A.dsn
+	--------------
+	user=
+	password=
+	dsn=
+	B.dsn
+	--------------
+	user=
+	password=
+	dsn=
+	....
+
+	
+	

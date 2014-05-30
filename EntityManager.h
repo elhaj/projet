@@ -9,17 +9,24 @@
 #define ENTITYMANAGER_H_
 #include "ISQLEntity.h"
 #include "IVersion.h"
+#include "SQLSession.h"
 #include <string>
 #include <map>
+#include <vector>
+#include "ISQLDataStore.h"
 class EntityManager
 {
 	public:
-	bool save(ISQLEntity* entity, std::string tableName);
-	private :
-	std::map<std::string,IVersion*> id_version;
+	static EntityManager* getInstance();
+	~EntityManager();
+	std::string getType();
 	IVersion* getVersion(ISQLEntity* entity);
-
+	void updateVersion(ISQLEntity* entity);
+	private :
+	EntityManager();
+	std::string fType;
+	static EntityManager* sInstance;
+	std::map<std::string,IVersion*> fId_version;
+	static bool sInstanceFlag;
 };
-
-
 #endif /* ENTITYMANAGER_H_ */

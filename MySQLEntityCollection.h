@@ -23,7 +23,7 @@ public:
 	void display();
 
 private:
-	std::vector<MySQLEntity> entities;
+	std::vector<MySQLEntity> fEntities;
 
 };
 

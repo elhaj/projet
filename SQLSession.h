@@ -13,6 +13,9 @@
 #include <sqltypes.h>
 #include <sqlext.h>
 #include <string>
+#include <vector>
+#include "ISQLResultSet.h"
+
 class SQLSession
 {
 public :
@@ -20,10 +23,12 @@ public :
     SQLHDBC& getDBC();
     SQLSession(std::string DSN);
     void close();
-
+    std::vector<std::vector<std::string> >& getRows(std::string query);
+    ISQLResultSet* select(std::string& inTable, std::vector<std::string>& fields, std::string filtre);
+    long long int update(std::string& query);
 private :
-    SQLHDBC dbc;
-    SQLHENV env;
-    SQLHSTMT stmt;
+    SQLHDBC fDbc;
+    SQLHENV fEnv;
+    SQLHSTMT fStmt;
 };
 #endif /* SQLSESSION_H_ */

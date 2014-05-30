@@ -16,7 +16,7 @@ MySQLEntityCollection::MySQLEntityCollection() {
 }
 
 ISQLEntity* MySQLEntityCollection::getEntityByIndex(int index) {
-	return &entities[index];
+	return &fEntities[index];
 }
 
 bool MySQLEntityCollection::save(SQLSession session)
@@ -25,17 +25,17 @@ bool MySQLEntityCollection::save(SQLSession session)
 }
 void MySQLEntityCollection::add(MySQLEntity entity)
 {
-entities.push_back(entity);
+fEntities.push_back(entity);
 }
 int MySQLEntityCollection::size()
 {
-	return entities.size();}
+	return fEntities.size();}
 void MySQLEntityCollection::display()
 {
-	for(unsigned int i=1;i<=entities.size();i++)
+	for(unsigned int i=1;i<=fEntities.size();i++)
 	{
 		cout<<"Entity "<<i<<endl;
-		entities[i-1].display();
+		fEntities[i-1].display();
 	}
 }
 MySQLEntityCollection::~MySQLEntityCollection()

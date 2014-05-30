@@ -1,0 +1,5 @@
+sgbd=sqlserver
+dsn=DSN1
+database=pfe
+user=user
+password=elhaj

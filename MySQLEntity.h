@@ -14,20 +14,21 @@
 class MySQLEntity : public ISQLEntity
 {
 public :
-	 MySQLEntity();
+	 MySQLEntity(ISQLDataClass* dc);
 	 ~MySQLEntity();
-	 bool save(SQLSession session);
-	 std::string* getField(std::string fieldName);
+	 bool save();
+	 std::string* getField(std::string fieldName) const;
 	 void setFieldValue(std::string fieldName, std::string value);
-	 void display();
+	 void display() const;
 	 std::string getId() const;
 	 void setId(std::string id);
-	 IVersion* getVersion();
+	 IVersion* getVersion() const;
 	 void setVersion(IVersion* version);
+	 std::vector<std::string>& getChangedFields();
 private :
-	 std::string id;
-	 std::map<std::string, std::string> fields;
-	 std::string primaryKeys[];
-	 IVersion* version;
+	 std::string fId;
+	 std::map<std::string, std::string> fFields;
+	 IVersion* fVersion;
+	 std::vector<std::string> fChangedFields;
 };
 #endif /* MYSQLENTITY_H_ */
